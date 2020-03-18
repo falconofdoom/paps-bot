@@ -15,7 +15,7 @@ module.exports = (robot) ->
 
   robot.respond /penge (.*)/i, (res) ->
     inputMessage = res.match[1]
-    request = addslashes(inputmessage.join(" "))
+    request = addslashes(inputMessage.join(" "))
     user = msg.message.user.name.toLowerCase()
 
     res.send "Mamaya na di pa ko implemented, Request: #{request}, User: #{user}, Input message: #{inputMessage}"
