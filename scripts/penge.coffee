@@ -26,7 +26,7 @@ module.exports = (robot) ->
 			else
 				msg.send stdout
 
-		msg.send "Mamaya na di pa ko implemented Req: #{request} User: #{user} Input: #{inputMsg}"
+		msg.send "Sige gawin natin yan brother"
 
   # robot.hear /I like pie/i, (res) ->
   #   res.emote "makes a freshly baked pie"
