@@ -9,15 +9,14 @@
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
 addslashes = (str) ->
-  (str + '').replace(/[\\"']/g, '').replace /\u0000/g, ''
+	(str + '').replace(/[\\"']/g, '').replace /\u0000/g, ''
 
 module.exports = (robot) ->
-
-robot.respond /fetch (.*)$/i, (msg) ->
-	inputMsg = msg.match[1].split(" ")
-	request = addslashes(inputMsg.join(" "))
-	user = msg.message.user.name.toLowerCase()
-    msg.send "Mamaya na di pa ko implemented, Request: #{request}, User: #{user}, Input message: #{inputMsg}"
+	robot.respond /fetch (.*)$/i, (msg) ->
+		inputMsg = msg.match[1].split(" ")
+		request = addslashes(inputMsg.join(" "))
+		user = msg.message.user.name.toLowerCase()
+	    msg.send "Mamaya na di pa ko implemented, Request: #{request}, User: #{user}, Input message: #{inputMsg}"
 
   # robot.hear /I like pie/i, (res) ->
   #   res.emote "makes a freshly baked pie"
