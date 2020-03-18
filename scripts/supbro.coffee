@@ -1,7 +1,7 @@
 module.exports = (robot) ->
-	robot.hear /(good job)/i, (msg) ->
+	robot.respond /(good job)/i, (msg) ->
 		msg.send "Salamat bro! Malakas ka sakin eh!"
 	
-	robot.hear /(kumusta\?)/i, (msg) ->
+	robot.respond /(sup bro\?)/i, (msg) ->
 		msg.send "Ok lang men"
 
