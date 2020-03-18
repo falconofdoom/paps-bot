@@ -13,12 +13,11 @@ addslashes = (str) ->
 
 module.exports = (robot) ->
 
-  robot.respond /penge (.*)/i, (res) ->
-    inputMessage = res.match[1]
-    request = addslashes(inputMessage.join(" "))
-    user = msg.message.user.name.toLowerCase()
-
-    res.send "Mamaya na di pa ko implemented, Request: #{request}, User: #{user}, Input message: #{inputMessage}"
+robot.respond /fetch (.*)$/i, (msg) ->
+	inputMsg = msg.match[1].split(" ")
+	request = addslashes(inputMsg.join(" "))
+	user = msg.message.user.name.toLowerCase()
+    msg.send "Mamaya na di pa ko implemented, Request: #{request}, User: #{user}, Input message: #{inputMsg}"
 
   # robot.hear /I like pie/i, (res) ->
   #   res.emote "makes a freshly baked pie"
