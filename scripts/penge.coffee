@@ -16,6 +16,16 @@ module.exports = (robot) ->
 		inputMsg = msg.match[1].split(" ")
 		request = addslashes(inputMsg.join(" "))
 		user = msg.message.user.name.toLowerCase()
+		@exec = require("child_process").exec
+		cmd = "./penge.sh '#{request}' '#{user}'"
+
+		@exec cmd, (error, stdout, stderr) -> 
+			if error
+				msg.send error
+				msg.send stderr
+			else
+				msg.send stdout
+
 		msg.send "Mamaya na di pa ko implemented Req: #{request} User: #{user} Input: #{inputMsg}"
 
   # robot.hear /I like pie/i, (res) ->
