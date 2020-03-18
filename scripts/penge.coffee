@@ -16,8 +16,8 @@ module.exports = (robot) ->
 		inputMsg = msg.match[1].split(" ")
 		request = addslashes(inputMsg.join(" "))
 		user = msg.message.user.name.toLowerCase()
-	    msg.send "Mamaya na di pa ko implemented, Request: #{request}, User: #{user}, Input message: #{inputMsg}"
-
+		msg.send "Mamaya na di pa ko implemented Req: #{request} User: #{user} Input: #{inputMsg}"
+		
   # robot.hear /I like pie/i, (res) ->
   #   res.emote "makes a freshly baked pie"
   #
